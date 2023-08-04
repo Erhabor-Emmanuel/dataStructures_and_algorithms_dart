@@ -1,5 +1,3 @@
-import 'dart:collection';
-import 'dart:io';
 
 //Linked lists are dynamic data structures, meaning they can grow or
 // shrink in size during program execution, unlike arrays that have a fixed size.
