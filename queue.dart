@@ -1,4 +1,19 @@
 
+void main(){
+  final queue = QueueList<String>();
+  queue.enqueue('Ray');
+  queue.enqueue('Brian');
+  queue.enqueue('Eric');
+  print("queue =====> $queue");
+
+  queue.dequeue();
+  print("queue =====> $queue");
+
+  queue.peek;
+  print("queue peek =====> ${queue.peek}");
+}
+
+
 abstract class Queue<E>{
   bool enqueue(E element);
   E? dequeue();
@@ -16,11 +31,14 @@ class QueueList<E> implements Queue<E>{
   }
 
   @override
-  E? dequeue() => throw UnimplementedError();
+  E? dequeue() => (isEmpty)? null : _list.removeAt(0);
 
   @override
   bool get isEmpty => _list.isEmpty;
 
   @override
-  E? get peek => (isEmpty)? null : _list.first; 
+  E? get peek => (isEmpty)? null : _list.first;
+
+  @override
+  String toString() => _list.toString(); 
 }
